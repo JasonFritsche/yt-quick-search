@@ -1,4 +1,11 @@
+*This is my first project using the Vue.js framework.*
+
 # video-browser
+
+This is a small project which utilizes the YouTube API to retrieve a list of videos. Users can easily search for and view videos.*
+
+---
+# Vue Generated Stuff
 
 ## Project setup
 ```
