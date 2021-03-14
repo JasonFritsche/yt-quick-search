@@ -1,18 +1,35 @@
 <template>
-  <li class="list-group-item">{{ video.snippet.title }}</li>
+  <li class="list-group-item media" @click="onVideoSelect">
+    <img class="mr-3" :src="thumbnailUrl" />
+    <div class="media-text-body">
+      {{ video.snippet.title }}
+    </div>
+  </li>
 </template>
 
 <script>
 export default {
   name: 'VideoListItem',
   props: ['video'],
-  methods: {
-    logProps: function() {
-      console.log(this.video.snippet);
+  computed: {
+    thumbnailUrl: function() {
+      return this.video.snippet.thumbnails.default.url;
     },
   },
-  mounted: function() {
-    this.logProps();
+  methods: {
+    onVideoSelect: function() {
+      this.$emit('videoSelect', this.video);
+    },
   },
 };
 </script>
+
+<style scoped>
+li {
+  display: flex;
+  cursor: pointer;
+}
+li:hover {
+  background-color: #eee;
+}
+</style>
