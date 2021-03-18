@@ -1,8 +1,13 @@
 <template>
   <div class="container">
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1">Navbar</span>
+    </nav>
     <SearchBar @termChange="onTermChange"></SearchBar>
-    <VideoDetail :video="selectedVideo"></VideoDetail>
-    <VideoList :videos="videos" @videoSelect="onVideoSelect"></VideoList>
+    <div class="row">
+      <VideoList :videos="videos" @videoSelect="onVideoSelect"></VideoList>
+      <VideoDetail :video="selectedVideo"></VideoDetail>
+    </div>
   </div>
 </template>
 
@@ -45,3 +50,5 @@ export default {
   },
 };
 </script>
+
+<style scoped></style>
